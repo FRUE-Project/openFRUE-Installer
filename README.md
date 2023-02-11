@@ -1,11 +1,12 @@
-# distinst
+# openFRUE Installer Backend
 
-Distinst is a Rust-based software library that handles Linux distribution installer installation details. It has been built specifically to be used in the construction of Linux distribution installers, so that installers can spend more time improving their UI, and less time worrying about some of the more complicated implementation details, such as partition management & encryption.
+This repo contains the backend for the openFRUE Installer. It is written in Rust.
+This repo is forked from https://github.com/pop-os/distinst
 
 ## Frontends
 
 At the moment, elementary's installer is the primary target for distinst. However, distinst also ships with a CLI application (also called distinst) that serves as a fully-functioning test bed for the distinst library. Example scripts exist within the [tests](https://github.com/pop-os/distinst/tree/master/tests) directory to demonstrate how the CLI
-can be used to perform installs using files from the Pop! ISO.
+can be used to perform installs using files from the openFRUE ISO.
 
 ### CLI
 
@@ -76,7 +77,7 @@ installer.install (disks, config);
 
 ### Extracting, Chrooting, & Configuring
 
-The implementor of the library should provide a squashfs file that contains a base image that the installer will extract during installation, as well as the accompanying `.manifest-remove` file. These can be found on the Pop!_OS ISOs, as an example. Once this image has been extracted, the installer will chroot into the new install and then configure the image using the configuration script located at `src/configure.sh`.
+The implementor of the library should provide a squashfs file that contains a base image that the installer will extract during installation, as well as the accompanying `.manifest-remove` file. These can be found on the openFRUE amd64 ISOs, as an example. Once this image has been extracted, the installer will chroot into the new install and then configure the image using the configuration script located at `src/configure.sh`.
 
 ### Bootloader
 
@@ -84,26 +85,27 @@ Based on whether the image is running on a system that is EFI or not, the bootlo
 
 ## Build Instructions
 
-In order to build `distinst` on Pop!, you will need to follow these instructions:
-
+In order to build `distinst` on openFRUE, you will need to follow these instructions:
+!! At the time of writing, there are already plans to include this to openFRUE, do not follow these instructions!!
 ```sh
+
 # Install dependencies
-sudo apt build-dep distinst
+# sudo emerge build-dep distinst
 
 # Build in debug mode
 # make all DEBUG=1
 
 # Build in release mode
-make
+# make
 
 # Install in release mode
-sudo make install prefix=/usr
+# sudo make install prefix=/usr
 
 # Install in debug mode
 # sudo make install prefix=/usr DEBUG=1
 
 # Uninstall
-sudo make uninstall
+# sudo make uninstall
 ```
 
 The following files will be generated:
