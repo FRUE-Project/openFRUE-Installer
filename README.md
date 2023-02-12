@@ -8,6 +8,10 @@ This repo is forked from https://github.com/pop-os/distinst
 At the moment, elementary's installer is the primary target for distinst. However, distinst also ships with a CLI application (also called distinst) that serves as a fully-functioning test bed for the distinst library. Example scripts exist within the [tests](https://github.com/pop-os/distinst/tree/master/tests) directory to demonstrate how the CLI
 can be used to perform installs using files from the openFRUE ISO.
 
+### TUI
+
+- [chuckle tui](https://github.com/FRUE-Project/chuckle-tui.git) (Bash)
+
 ### CLI
 
 - [distinst](https://github.com/pop-os/distinst/) (Rust)
