@@ -10,7 +10,7 @@ can be used to perform installs using files from the openFRUE ISO.
 
 ### TUI
 
-- [chuckle tui](https://github.com/FRUE-Project/chuckle-tui.git) (Bash)
+- [chuckle tui](https://github.com/FRUE-Project/chuckle-tui.git) (Python)
 
 ### CLI
 
